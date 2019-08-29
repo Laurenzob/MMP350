@@ -1,0 +1,12 @@
+body {
+            background-size: cover;
+            background-color: #2F323A;
+            font-family: 'Indie Flower', 'cursive';
+            font-size: 30px;
+            color: #C94834;
+            text-align: center;
+}
+h1 {
+	border: 5px #BFC0C0;
+	padding: 5px;
+}
