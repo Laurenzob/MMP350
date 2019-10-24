@@ -1,0 +1,14 @@
+:root {
+	--main-hue: 140; 
+	
+	--main-color: hsl(var(--main-hue), 50%, 50%);
+	--text-color: var(--main-color);
+		
+	--accent-one-hue: calc(var(--main-hue) - 120);
+	--accent-two-hue: calc(var(--main-hue) + 120);
+	
+	--accent-one: hsl(var(--accent-one-hue), 50%, 50%);
+	--accent-two: hsl(var(--accent-two-hue), 50%, 50%);
+		
+	--complement: var(--accent-two);
+}
