@@ -1,5 +1,5 @@
 #container {
-	max-width: 800px;
+	max-width: 900px;
 	margin: 0 auto;
 	background-color: skyblue;
 	display: grid;
@@ -19,6 +19,7 @@ p {
 #title {
 	grid-column-start: 1;
 	grid-column-end: 4;
+	grid-row:2;
 }
 
 #menu {
@@ -27,8 +28,8 @@ p {
 	background-color: #B9FFB0;
 }
 #login {
-	grid-column: 1 / span 2;
-	grid-row: 3;
+	grid-column: 3 / span 2;
+	grid-row: 2;
 	padding: 15px;
 
 }
@@ -37,7 +38,7 @@ p {
     float: left;
     text-align: center;
     padding: 20px;
-    font-size: 18px;
+    font-size: 25px;
     }
 #main {
 
@@ -45,5 +46,6 @@ p {
 
 
 }
+
 
 
