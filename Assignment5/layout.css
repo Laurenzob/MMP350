@@ -65,6 +65,20 @@ p {
 
 
 }
+
+#user-info {
+	display: none;
+	grid-area: sign-up;
+}
+/*
+.logged-in #user-info {
+	display: block;
+}
+
+.logged-in #login, .logged-in #sign-up {
+	display: none;
+}
+*/
 button {
 	padding:10px;
 }

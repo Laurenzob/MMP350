@@ -4,7 +4,7 @@ const passwordInput = document.getElementById("password");
 const message = document.getElementById("login-message");
 
 
-const displayNameL = document.getElementById("user-name");
+const displayName = document.getElementById('display-name');
 const profileButton = document.getElementById("profile-button");
 
 const emailInput = document.getElementById("email");
@@ -65,6 +65,7 @@ function authState(user) {
 		console.log(user);
 	}
 }
+firebase.auth().onAuthStateChanged(authState);
 
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
@@ -82,6 +83,20 @@ firebase.auth().onAuthStateChanged(function(user) {
 		displayName.textContent = "";
 	}
 });
+
+function authState(user) {
+	if (user) {
+		displayName.textContent = 'Hello, ' + user.displayName;
+		document.body.classList.add('logged-in');
+	} else {
+		document.body.classList.remove('logged-in');
+	}
+}
+
+const logoutButton = document.getElementById("log-out");
+logoutButton.onclick = function() {
+	firebase.auth().signOut();
+};
 
 	/*
   	promise.then(function(credential){
@@ -131,10 +146,7 @@ loginButton.onclick = function() {
 };
 
 
-const logoutButton = document.getElementById("logout-button");
-logoutButton.onclick = function() {
-	firebase.auth().signOut();
-};
+
 /*Login Display*/
 /*Profile Display*/
 /* log out */
