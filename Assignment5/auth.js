@@ -23,6 +23,7 @@ function createUser() {
 };
 submitButton.onclick = createUser;
 
+//Create User //
 	submitButton.onclick = function() {
 	const promise = firebase.auth().createUserWithEmailAndPassword(emailInput.value, passwordInput.value);
 	promise.catch(function(error) {
@@ -50,7 +51,7 @@ submitButton.onclick = createUser;
 	credential.user.updateProfile(userInfo);
 };
 
-const loginButton = document.getElementById('submit-login');
+const loginButton = document.getElementById('submit');
 const loginEmail = document.getElementById('email');
 const loginPassword = document.getElementById('password');
 
@@ -98,56 +99,5 @@ logoutButton.onclick = function() {
 	firebase.auth().signOut();
 };
 
-	/*
-  	promise.then(function(credential){
-      createUser(credential.user.uid);
-});
-
-submitButton.onclick = function() {
-	const promise = firebase.auth().createUserWithEmailAndPassword(emailInput.value, passwordInput.value);
-	promise.catch(function(error) {
-		errorMessage.textContent = error.message;
-	});
-	promise.then(function(response) {
-		createUser(response.user);
-	});
-};
 
 
-
-function authState(user) {
-	if (user) {
-		console.log(user);
-	}
-}
-firebase.auth().onAuthStateChanged(authState);
-
-
-const displayName = document.getElementById('display-name');
-function authState(user) {
-	if (user) {
-		displayName.textContent = 'Hello, ' + user.displayName;
-		document.body.classList.add('logged-in');
-	} else {
-		document.body.classList.remove('logged-in');
-	}
-}
-
-
-
-
-const loginButton = document.getElementById('submit-login');
-const loginEmail = document.getElementById('login-email');
-const loginPassword = document.getElementById('login-password');
-loginButton.onclick = function() {
-	const email = loginEmail.value;
-	const password = loginPassword.value;
-	firebase.auth().signInWithEmailAndPassword(email, password);
-};
-
-
-
-/*Login Display*/
-/*Profile Display*/
-/* log out */
-/* log in */
