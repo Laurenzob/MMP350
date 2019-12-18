@@ -37,7 +37,7 @@ p {
 }
 #login {
 	grid-column: 3 / span 2;
-	grid-row: 2;
+	grid-row: 2/ span 1;
 	padding: 15px;
 
 }
