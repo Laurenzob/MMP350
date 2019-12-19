@@ -1,3 +1,54 @@
+//User Login//
+const loginButton = document.getElementById('login-button');
+const loginEmail = document.getElementById('email');
+const loginPassword = document.getElementById('password');
+
+loginButton.onclick = function(event) {
+	const promise = firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword);
+	promise.catch(function(error) {
+		message.textContent = error.message;
+	});
+};
+function authState(user) {
+	if (user) {
+		console.log(user);
+	}
+}
+// Auth //
+const displayName = document.getElementById('username');
+
+firebase.auth().onAuthStateChanged(function(user) {
+
+	if (user) {
+		document.body.classList.add('auth');
+        
+      /* Find User */
+        const userRef = firebase.database().ref('users').child(user.uid);
+        userRef.on('value',function(snapshot) {
+
+            const userInfo = snapshot.val();
+            displayName.textContent = "Welcome," + userInfo.displayName;
+        });
+ 
+
+		const profileButton = document.getElementById("edit-profile");
+		profileButton.onclick = function() {
+			location.href = "users.html?uid=" + user.uid;	
+		};
+
+
+	} else {
+		document.body.classList.remove('auth');
+		displayName.textContent = "";
+	}
+});
+
+const logoutButton = document.getElementById("log-out");
+logoutButton.onclick = function() {
+	firebase.auth().signOut();
+};
+
+
 /* create user*/
 /*
 const usernameInput = document.getElementById("username");
@@ -42,66 +93,12 @@ submitButton.onclick = createUser;
 		location.href = 'index.html';
 	});
 }
-*/
+
 	function updateUser(credential) {
 	const userInfo = {
 		displayName: usernameInput.value
 	};
 	credential.user.updateProfile(userInfo);
 };
-
-//User Login//
-const loginButton = document.getElementById('submit');
-const loginEmail = document.getElementById('email');
-const loginPassword = document.getElementById('password');
-
-loginButton.onclick = function() {
-	const email = loginEmail.value;
-	const password = loginPassword.value;
-	firebase.auth().signInWithEmailAndPassword(email, password);
-};
-
-function authState(user) {
-	if (user) {
-		console.log(user);
-	}
-}
-firebase.auth().onAuthStateChanged(authState);
-
-const displayName = document.getElementById('display-name');
-const profileButton = document.getElementById("profile-button");
-
-
-firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-		document.body.classList.add('auth');
-		const userRef = firebase.database().ref('users').child(user.uid);
-		userRef.once('value', function(snapshot) {
-			const userInfo = snapshot.val();
-			displayName.textContent = "Welcome, " + userInfo.displayName;
-			profileButton.onclick = function() {
-				location.href = "users.html";
-			};
-		});
-	} else {
-		document.body.classList.remove('auth');
-		displayName.textContent = "";
-	}
-});
-
-function authState(user) {
-	if (user) {
-		displayName.textContent = 'Hello, ' + user.displayName;
-		document.body.classList.add('logged-in');
-	} else {
-		document.body.classList.remove('logged-in');
-	}
-}
-
-const logoutButton = document.getElementById("log-out");
-logoutButton.onclick = function() {
-	firebase.auth().signOut();
-};
-
-
+*/
 
