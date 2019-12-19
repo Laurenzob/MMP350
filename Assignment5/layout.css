@@ -20,7 +20,7 @@ img {
 }
 
 p {
-	font-size: 30px;
+	font-size: 20px;
 	padding: 10px;
 }
 
@@ -55,7 +55,7 @@ p {
 
 }
 #profile {
-	grid-row:3;
+	grid-row:4;
 	grid-column:1;
 
 }
@@ -76,7 +76,7 @@ p {
 	display: none;
 	grid-area: sign-up;
 }
-/*
+
 .logged-in #user-info {
 	display: block;
 }
@@ -84,9 +84,9 @@ p {
 .logged-in #login, .logged-in #sign-up {
 	display: none;
 }
-*/
+
 button {
-	padding:10px;
+	padding:5px;
 }
 
 

@@ -2,6 +2,8 @@
 const loginButton = document.getElementById('login-button');
 const loginEmail = document.getElementById('email');
 const loginPassword = document.getElementById('password');
+const message = document.getElementById("login-message");
+
 
 loginButton.onclick = function(event) {
 	const promise = firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value);
@@ -33,7 +35,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 		const profileButton = document.getElementById("edit-profile");
 		profileButton.onclick = function() {
-			location.href = "users.html?uid=" + user.uid;	
+			location.href = "profile.html?uid=" + user.uid;	
 		};
 
 

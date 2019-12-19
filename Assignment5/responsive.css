@@ -37,6 +37,9 @@
 #social {
 	align-content: center;
 	display: flex;
+	grid-row: 4/ span 4;
+    grid-column: 1/ span 2;
+    font-size: 20px;
 }
 
 #main {
@@ -46,8 +49,8 @@
         margin-top: 40px;
 }
 #profile {
-	grid-column: 1;
-	grid-row:5;
+	grid-column: 3 / span 4;
+	grid-row:3 / span 4;
 }
 #login {
 	grid-column: 1 / span 2;
@@ -66,7 +69,140 @@
         grid-template-rows:auto 160px 400px auto ;
     }
 }
+/* mobile */
+@media(max-width: 414px){
+    #container{
+        width: 100%;
+        border-bottom: 1px solid black;
+        grid-template-columns: 100%;
+    }
 
+    #title, #title-create, #menu, #menu-create, #user-info, #main, #main-create, #write-post , #profile{
+        grid-column: 1 / span 1;
+    }
+
+    #menu  {
+        grid-row: 2;
+    }
+    #title{
+    
+        grid-row: 1;
+    }
+    #login{
+        padding-top: 40px;
+        grid-row: 2/span 3;
+    }
+    #user-info{
+        grid-row:4;
+    } 
+    #profile{
+        grid-row: 5;
+    }
+ textarea{
+    height: 110px;
+    width: 100%;
+    box-shadow:  1px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+  #write-post{
+      grid-row: 6;
+  }
+
+    #main{
+        grid-row: 4;
+    }
+   
+    #posts{
+        grid-row:7;
+    }
+    #social{
+        grid-row: 8;
+    }
+    input{
+        border-bottom: 1px solid black;	
+        display: block;
+        margin:0 auto;
+    }
+
+    button{
+
+        display: block;
+        margin:0 auto;
+    }
+  
+    #posts{
+        grid-column: 1;
+       
+    }
+
+ 
+    #login-message{
+        display: block;
+        margin:0 auto;
+    }
+
+}
+@media(max-width:1024px) and (min-width:414px){
+    #container{
+        width: 100%;
+        border-bottom: 1px solid black;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+  
+
+    #menu  {
+        grid-row: 2;
+        grid-column:1;
+        
+    }
+
+    #login{
+        padding-top: 10px;
+        grid-column:2;
+        grid-row:3;
+    }
+    #title{
+        grid-column:2;
+        grid-row: 1;
+    }
+    #main{
+        grid-row: 4;
+    }
+
+    input{
+        border-bottom: 1px solid black;	
+        display: block;
+        margin:0 auto;
+    }
+    #profile{
+        grid-column:1;
+        grid-row:4;
+    }
+    #social{
+        grid-column:1;
+        grid-row:5;
+    }
+    button{
+
+        display: block;
+        margin:0 auto;
+    }
+
+    #login-message{
+        display: block;
+        margin:0 auto;
+    }
+
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 
 
 
