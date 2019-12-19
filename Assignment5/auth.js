@@ -4,7 +4,7 @@ const loginEmail = document.getElementById('email');
 const loginPassword = document.getElementById('password');
 
 loginButton.onclick = function(event) {
-	const promise = firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword);
+	const promise = firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value);
 	promise.catch(function(error) {
 		message.textContent = error.message;
 	});
