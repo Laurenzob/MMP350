@@ -1,0 +1,14 @@
+#menu ul{
+
+    margin: 0.6em;
+    padding: 0.8em;
+    display:flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size:19px;
+}
+#menu li{
+list-style: none;
+    flex-grow: .5;
+}
