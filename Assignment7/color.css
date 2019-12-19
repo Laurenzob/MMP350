@@ -106,7 +106,7 @@
 	color: var(--main-color);
 }
 
-#menu, #login {
+#menu {
 	background-color: var(--accent-one);
 }
 
