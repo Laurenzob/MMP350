@@ -37,7 +37,7 @@
 	align-content: center;
 	display: flex;
 	grid-row: 5;
-    grid-column: 1/ span 2;
+    grid-column: 3/ span 3;
     font-size: 20px;
 }
 
@@ -184,7 +184,7 @@
         grid-row:4;
     }
     #social{
-        grid-column:1;
+        grid-column:3;
         grid-row:5;
     }
     button{

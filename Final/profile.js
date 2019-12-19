@@ -8,6 +8,7 @@ const userRef = firebase.database().ref('users').child(uid);
 userRef.on('value', function(snapshot) {
 	const userInfo = snapshot.val();
 	profileName.value = userInfo.userName;
+	
 	if (userInfo.bio) {
 		bioInput.value = userInfo.bio;
 	}
@@ -15,7 +16,7 @@ userRef.on('value', function(snapshot) {
 
 updateButton.onclick = function() {
 	userRef.update({
-		userName: profileName.value,
+		displayName: profileName.value,
 		bio: bioInput.value
 	});
 };

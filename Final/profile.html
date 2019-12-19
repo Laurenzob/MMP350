@@ -13,11 +13,9 @@
 
 	<!-- TODO: Add SDKs for Firebase products that you want to use
 		 https://firebase.google.com/docs/web/setup#config-web-app -->
-<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -56,23 +54,23 @@
 
 
 		<img src="husky.jpg" alt"">
-		<input id="profile-name" placeholder="User name">
+		<input id="user-name" placeholder="User name">
 		<textarea id="bio" placeholder="Write your bio."></textarea>
 		<button id="update-profile">Update Profile</button>
-		<div id="add-image">
+
+
+
+		<div id="main">
+			<div id="add-image">
 			<p>Add a profile image:</p>
 			<input id="profile-image-file" type="file" name="profile-img" accept="image/gif, image/jpeg, image/png">
 			<button id="submit-image">Submit Image</button>
 		</div>
 	</div>
 
-
-		<div id="main">
-			
-
 		</div>
 		<div id="user-info" >
-		<div id="display-name"></div>
+            <p id="user-name"></p>
 		<button id="log-out">Log Out</button>
 		</div>
 		

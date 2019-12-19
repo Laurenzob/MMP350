@@ -17,7 +17,7 @@ function authState(user) {
 	}
 }
 // Auth //
-const displayName = document.getElementById('username');
+const displayName = document.getElementById('user-name');
 
 firebase.auth().onAuthStateChanged(function(user) {
 
@@ -49,12 +49,6 @@ const logoutButton = document.getElementById("log-out");
 logoutButton.onclick = function() {
 	firebase.auth().signOut();
 };
-
-// change 
-users[snapshot.key] = snapshot.val().displayName;
-// to this
-users[snapshot.key] = snapshot.val();
-
 
 /* create user*/
 /*

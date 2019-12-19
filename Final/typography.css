@@ -1,0 +1,51 @@
+:root {
+	--display-font:'Inria Serif', serif;
+	--text-font: 'PT Sans', sans-serif;
+}
+button {
+	font-family: var(--text-font);	
+}
+
+body {
+	font-family: var(--text-font);	
+}
+
+
+h1{
+	font-family: var(--display-font);	
+	font-weight:900px;
+}
+	
+a {
+	font-family: var(--text-font);
+}
+
+.author a{
+    font-family: var(--script-font);
+    font-size:2vw;
+    }
+	
+.post .text {
+	font-family: var(--text-font);
+}
+	
+.post .author {
+	font-family: var(--script-font);	
+	display: inline-block;
+	margin-right: 0.25em;
+	
+}
+.user .name a{
+	font-family:var(--script-font);	
+	display: inline-block;
+	margin-right: 0.25em;
+	font-size: 1.5em;
+}
+	
+.post .date {
+	display: inline-block;
+}
+	
+.post .date::before {
+	content: " on ";
+}

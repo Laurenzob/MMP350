@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Inria+Serif|PT+Sans&display=swap');
+
 @import "layout.css";
 @import "color.css";
 @import "publish.css";
 @import "post.css";
-
+@import "typography.css";
 
 @import "responsive.css";
 @import "menu.css";
