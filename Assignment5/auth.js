@@ -1,13 +1,12 @@
 /* create user*/
+/*
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const message = document.getElementById("login-message");
-
-
-const displayName = document.getElementById('display-name');
-const profileButton = document.getElementById("profile-button");
-
 const emailInput = document.getElementById("email");
+
+
+
 const submitButton = document.getElementById("submit");
 
 function createUser() {
@@ -43,7 +42,7 @@ submitButton.onclick = createUser;
 		location.href = 'index.html';
 	});
 }
-
+*/
 	function updateUser(credential) {
 	const userInfo = {
 		displayName: usernameInput.value
@@ -51,11 +50,12 @@ submitButton.onclick = createUser;
 	credential.user.updateProfile(userInfo);
 };
 
+//User Login//
 const loginButton = document.getElementById('submit');
 const loginEmail = document.getElementById('email');
 const loginPassword = document.getElementById('password');
 
-submitButton.onclick = function() {
+loginButton.onclick = function() {
 	const email = loginEmail.value;
 	const password = loginPassword.value;
 	firebase.auth().signInWithEmailAndPassword(email, password);
@@ -68,6 +68,10 @@ function authState(user) {
 }
 firebase.auth().onAuthStateChanged(authState);
 
+const displayName = document.getElementById('display-name');
+const profileButton = document.getElementById("profile-button");
+
+
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 		document.body.classList.add('auth');
@@ -76,7 +80,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 			const userInfo = snapshot.val();
 			displayName.textContent = "Welcome, " + userInfo.displayName;
 			profileButton.onclick = function() {
-				location.href = "profile.html";
+				location.href = "users.html";
 			};
 		});
 	} else {
