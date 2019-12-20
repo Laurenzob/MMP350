@@ -8,6 +8,31 @@ postText.addEventListener('keyup', function(event) {
 	}
 });
 
+const submitButton = document.getElementById('submit-image');
+submitButton.addEventListener('click', function() {
+	// get file
+	// upload file
+});
+const file = document.getElementById('profile-image-file').files[0];
+// check file exists 
+if (file) {
+	// upload
+}
+
+const storage = firebase.storage();
+const user = firebase.auth().currentUser;
+const ref = storage.ref('users').child(user.uid).child('profile-image');
+const promise = ref.put(file);
+
+promise.then(function(image) {
+	return image.ref.getDownloadURL();
+}).then(function(url) {
+	user.updateProfile({ url: url });
+	document.getElementById('profile-image').src = url;
+	document.getElementById('add-image').style.display = 'none';
+	firebase.database().ref('users').child(user.uid).update({ imageURL: url });
+});
+
 const ref = firebase.database().ref('posts');
 
 function publishPost() {
