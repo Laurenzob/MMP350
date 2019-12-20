@@ -1,0 +1,17 @@
+:root{
+    --main-color:#7D938A;
+    --text-color:rgb(70, 88, 91);
+    --link-color:#F9E7E7;
+    --button-color:#70F3FF;
+    --background-color:#5E7D80;
+    --post-color:#A984B7;
+}
+
+.post{
+   background-color: var(--post-color) ;
+   padding: 50px;
+   margin: 15px;
+   border-color: #eee #ddd #bbb;
+   box-shadow:  8px 5px rgba(0, 0, 0, 0.15);
+   border-radius: 8px;
+}

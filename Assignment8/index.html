@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chaset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>webpage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCLeNOL7f50_gsLd477RShAtd-mUPV6SFo",
+    authDomain: "auth-a7f14.firebaseapp.com",
+    databaseURL: "https://auth-a7f14.firebaseio.com",
+    projectId: "auth-a7f14",
+    storageBucket: "auth-a7f14.appspot.com",
+    messagingSenderId: "400748337240",
+    appId: "1:400748337240:web:456e65d63199472060122d"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    </head>
+     <body>
+        <div id="container">
+            <div id="title">
+                <h1>MMP 350 Web Page</h1>
+                
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href = "profile.html">profile</a></li>
+                <li><a href="users">users</a></li>
+                <li><a href="support">support</a></li>
+            </ul>
+        </div>
+        <div id="sign-up">
+        <p></p>
+            <input type="text" id="email" placeholder="Email">
+            <input id="password" type="password" placeholder="Password">
+            <button id="login-button">Login</button>
+            <p><a href="create.html">Create new account</a></p>
+            <p id="login-message"></p>
+
+
+        </div>
+
+
+
+        <div id="main">
+        <p></p>
+        <p></p>
+                <p></p>
+        <p></p>
+
+            <div id="write-post">
+            <textarea id="post-text" placeholder="Compost a new post"></textarea>
+                <button id="publish">Publish</button>
+            </div>
+            <div id="posts"></div>
+            
+        </div>
+    
+
+        <div id="profile">
+            <img src="husky.jpg" alt"">
+            <button id="edit-profile">Edit Profile</button>
+        </div>
+        <div id="social">
+            <ul>
+                <li><a href="Twitter">Twitter</a></li>
+                <li><a href="Facebook">Facebook</a></li>
+                <li><a href="Instagram">Instagram</a></li>
+                <li><a href="LinkedIn">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div id="user-info">
+            <p id="user-name"></p>
+            
+            <button id="log-out">Log Out</button>
+
+            <p id="login-message"></p>
+        </div>
+        
+    </div>
+
+ <script src="auth.js"></script>
+ <script src="posts.js"></script>
+ <script src="publish.js"></script>
+
+</body>
+</html>
